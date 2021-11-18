@@ -32,9 +32,23 @@ public class User {
 	}
 	
 	public void startBank() {
-		System.out.println("Welcome to Regional Bank of America " + name + "!");
-		System.out.println("Please select an option from the menu. To exit the system, please press 6.");
+		System.out.println("Welcome " + name + "!");
+		System.out.println("Please select an option from the menu and press Enter. To exit the system, please press 6.");
+		
+		// Bank Menu
+		System.out.println("MAIN MENU: ");
+		System.out.println("1.) View account information");
+		System.out.println("2.) Check account balance");
+		System.out.println("3.) Make a deposit");
+		System.out.println("4.) Withdraw from account");
+		System.out.println("5.) View previous transaction");
+		System.out.println("6.) EXIT");
 		
 		// Put switch statement here and use scanner to get user input.
+		switch(scanner.nextInt()) {
+		case 1: 
+			this.getAccountInfo();
+			break;
+		}
 	}
 }

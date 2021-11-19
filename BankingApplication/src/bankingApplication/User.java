@@ -19,8 +19,8 @@ public class User {
 		System.out.println("Account Number: " + accountNumber);
 	}
 	
-	public double getBalance() {
-		return this.balance;
+	public void getBalance() {
+		System.out.println(this.balance);
 	}
 	
 	public double depositMoney(double deposit) {
@@ -46,9 +46,23 @@ public class User {
 		
 		// Put switch statement here and use scanner to get user input.
 		switch(scanner.nextInt()) {
-		case 1: 
-			this.getAccountInfo();
-			break;
+			case 1: 
+				this.getAccountInfo();
+				break;
+			case 2:
+				this.getBalance();
+				break;
+			case 3:
+				System.out.println("How much would you like to deposit?");
+				double deposit = scanner.nextDouble();
+				this.depositMoney(deposit);
+				if (deposit < 0) {
+					System.out.println("Error: Please enter a valid amount.");
+				} else {
+					System.out.print("Success! Your new balance is: ");
+					this.getBalance();
+					break;
+				}	
 		}
 	}
 }
